@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogLabs Docs</title>
+  <meta name="description" content="Documentación oficial de LogLabs y sus proyectos." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⚡</text></svg>" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a class="navbar-brand" href="index.html">
+    <span class="brand-prefix">log</span><span class="brand-sep">/</span><span class="brand-name">labs</span>
+    <span style="color:var(--border-hover);margin:0 6px">·</span>
+    <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">docs</span>
+  </a>
+  <div class="navbar-sep"></div>
+  <div class="search-wrapper">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input id="search-input" class="search-input" type="text" placeholder="Buscar / Search..." autocomplete="off" />
+    <div id="search-results" class="search-results"></div>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <a class="nav-home active" href="index.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="es-only">Inicio</span>
+      <span class="en-only">Home</span>
+    </a>
+    <div class="nav-divider"></div>
+
+    <div class="nav-project-label">LogLabs</div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">General</span>
+        <span class="nav-section-label en-only">General</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="index.html">
+          <span class="es-only">Bienvenida</span>
+          <span class="en-only">Welcome</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="nav-project-label" style="margin-top:8px">ZER0</div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Empezar</span>
+        <span class="nav-section-label en-only">Getting Started</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="zer0/index.html">
+          <span class="es-only">Introducción</span>
+          <span class="en-only">Overview</span>
+        </a>
+        <a class="nav-link" href="zer0/install.html">
+          <span class="es-only">Instalación</span>
+          <span class="en-only">Installation</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Referencia</span>
+        <span class="nav-section-label en-only">Reference</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="zer0/commands.html">
+          <span class="es-only">Comandos</span>
+          <span class="en-only">Commands</span>
+        </a>
+        <a class="nav-link" href="zer0/config.html">
+          <span class="es-only">Configuración</span>
+          <span class="en-only">Configuration</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label">FAQ</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="zer0/faq.html">
+          <span class="es-only">FAQ / Troubleshooting</span>
+          <span class="en-only">FAQ / Troubleshooting</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="main">
+    <div class="content">
+
+      <!-- ES -->
+      <div class="es-only">
+        <h1>Documentación de LogLabs</h1>
+        <p class="page-desc">Bienvenido al portal de documentación oficial de <strong>LogLabs</strong> — el laboratorio de software open source. Aquí encontrarás guías, referencias y todo lo que necesitas para usar nuestros proyectos.</p>
+
+        <h2>Proyectos</h2>
+        <div class="cards">
+          <a class="card" href="zer0/index.html">
+            <div class="card-icon">⚡</div>
+            <div class="card-title">ZER0</div>
+            <div class="card-desc">Gestor de alias de comandos para Arch Linux con REPL interactivo y +80 atajos por defecto.</div>
+          </a>
+        </div>
+
+        <h2>Inicio rápido</h2>
+        <p>¿Primera vez? Sigue estos pasos para empezar con ZER0:</p>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Instala ZER0</h4>
+              <p>Ejecuta el instalador de un solo archivo:</p>
+              <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/LogLabsHQ/ZER0/main/install.sh)</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Abre el REPL</h4>
+              <p>Inicia ZER0 desde la terminal con cualquiera de estos comandos:</p>
+              <pre><code>zero    # o también: -Z  ·  $Z</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Explora los comandos</h4>
+              <p>Revisa la <a href="zer0/commands.html">referencia completa de comandos</a> para sacar el máximo provecho a ZER0.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Recursos</h2>
+        <div class="cards">
+          <a class="card" href="https://github.com/LogLabsHQ/ZER0" target="_blank">
+            <div class="card-icon">🐙</div>
+            <div class="card-title">GitHub</div>
+            <div class="card-desc">Repositorio de ZER0 — código fuente, issues y releases.</div>
+          </a>
+          <a class="card" href="https://github.com/LogLabsHQ/ZER0/wiki" target="_blank">
+            <div class="card-icon">📖</div>
+            <div class="card-title">Wiki</div>
+            <div class="card-desc">Wiki oficial del proyecto ZER0.</div>
+          </a>
+          <a class="card" href="https://loglabsgit.github.io" target="_blank">
+            <div class="card-icon">🌐</div>
+            <div class="card-title">Web LogLabs</div>
+            <div class="card-desc">Sitio oficial del laboratorio de software.</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- EN -->
+      <div class="en-only">
+        <h1>LogLabs Documentation</h1>
+        <p class="page-desc">Welcome to the official documentation portal for <strong>LogLabs</strong> — the open source software lab. Here you'll find guides, references, and everything you need to use our projects.</p>
+
+        <h2>Projects</h2>
+        <div class="cards">
+          <a class="card" href="zer0/index.html">
+            <div class="card-icon">⚡</div>
+            <div class="card-title">ZER0</div>
+            <div class="card-desc">Command alias manager for Arch Linux with an interactive REPL and 80+ default shortcuts.</div>
+          </a>
+        </div>
+
+        <h2>Quick Start</h2>
+        <p>First time? Follow these steps to get started with ZER0:</p>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Install ZER0</h4>
+              <p>Run the single-file installer:</p>
+              <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/LogLabsHQ/ZER0/main/install.sh)</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Open the REPL</h4>
+              <p>Launch ZER0 from the terminal with any of these commands:</p>
+              <pre><code>zero    # or also: -Z  ·  $Z</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Explore the commands</h4>
+              <p>Check the <a href="zer0/commands.html">full command reference</a> to get the most out of ZER0.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Resources</h2>
+        <div class="cards">
+          <a class="card" href="https://github.com/LogLabsHQ/ZER0" target="_blank">
+            <div class="card-icon">🐙</div>
+            <div class="card-title">GitHub</div>
+            <div class="card-desc">ZER0 repository — source code, issues, and releases.</div>
+          </a>
+          <a class="card" href="https://github.com/LogLabsHQ/ZER0/wiki" target="_blank">
+            <div class="card-icon">📖</div>
+            <div class="card-title">Wiki</div>
+            <div class="card-desc">Official ZER0 project wiki.</div>
+          </a>
+          <a class="card" href="https://loglabsgit.github.io" target="_blank">
+            <div class="card-icon">🌐</div>
+            <div class="card-title">LogLabs Website</div>
+            <div class="card-desc">Official software lab website.</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="doc-footer">
+        <span class="doc-footer-text">LogLabs · MIT License · <a href="https://github.com/LogLabsHQ" target="_blank">@LogLabsHQ</a></span>
+        <span class="doc-footer-text" style="color:var(--text-subtle)">v1.0.3</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

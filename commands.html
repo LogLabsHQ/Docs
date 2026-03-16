@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comandos · ZER0 · LogLabs Docs</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⚡</text></svg>" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="navbar-brand" href="../index.html">
+    <span class="brand-prefix">log</span><span class="brand-sep">/</span><span class="brand-name">labs</span>
+    <span style="color:var(--border-hover);margin:0 6px">·</span>
+    <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">docs</span>
+  </a>
+  <div class="navbar-sep"></div>
+  <div class="search-wrapper">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input id="search-input" class="search-input" type="text" placeholder="Buscar / Search..." autocomplete="off" />
+    <div id="search-results" class="search-results"></div>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="hamburger" id="hamburger">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="nav-home" href="../index.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="es-only">Inicio</span><span class="en-only">Home</span>
+    </a>
+    <div class="nav-divider"></div>
+    <div class="nav-project-label">LogLabs</div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">General</span>
+        <span class="nav-section-label en-only">General</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="../index.html"><span class="es-only">Bienvenida</span><span class="en-only">Welcome</span></a>
+      </div>
+    </div>
+    <div class="nav-project-label" style="margin-top:8px">ZER0</div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Empezar</span>
+        <span class="nav-section-label en-only">Getting Started</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="index.html"><span class="es-only">Introducción</span><span class="en-only">Overview</span></a>
+        <a class="nav-link" href="install.html"><span class="es-only">Instalación</span><span class="en-only">Installation</span></a>
+      </div>
+    </div>
+    <div class="nav-section open">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Referencia</span>
+        <span class="nav-section-label en-only">Reference</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link active" href="commands.html"><span class="es-only">Comandos</span><span class="en-only">Commands</span></a>
+        <a class="nav-link" href="config.html"><span class="es-only">Configuración</span><span class="en-only">Configuration</span></a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label">FAQ</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="faq.html"><span class="es-only">FAQ / Troubleshooting</span><span class="en-only">FAQ / Troubleshooting</span></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="content">
+
+      <!-- ES -->
+      <div class="es-only">
+        <h1>Comandos / Referencia</h1>
+        <p class="page-desc">Referencia completa de todos los comandos del REPL de ZER0, organizados por categoría. ZER0 incluye más de 80 atajos por defecto.</p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Uso
+          </div>
+          Todos estos comandos se ejecutan <strong>dentro del REPL de ZER0</strong>. Abre el REPL con <code>zero</code>, <code>-Z</code> o <code>$Z</code> y luego escribe el alias.
+        </div>
+
+        <h2>Comandos del sistema ZER0</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><code>help</code></td><td>Muestra la ayuda del REPL y lista todos los comandos disponibles.</td></tr>
+              <tr><td><code>version</code></td><td>Muestra la versión actual de ZER0.</td></tr>
+              <tr><td><code>list</code></td><td>Lista todos los alias definidos (incluyendo personalizados).</td></tr>
+              <tr><td><code>add &lt;alias&gt; &lt;cmd&gt;</code></td><td>Agrega un nuevo alias personalizado.</td></tr>
+              <tr><td><code>remove &lt;alias&gt;</code></td><td>Elimina un alias personalizado.</td></tr>
+              <tr><td><code>edit</code></td><td>Abre el archivo de configuración en el editor por defecto.</td></tr>
+              <tr><td><code>reload</code></td><td>Recarga la configuración sin salir del REPL.</td></tr>
+              <tr><td><code>lang &lt;es|en&gt;</code></td><td>Cambia el idioma del REPL en tiempo real.</td></tr>
+              <tr><td><code>clear</code></td><td>Limpia la pantalla del REPL.</td></tr>
+              <tr><td><code>exit</code> / <code>q</code></td><td>Sale del REPL de ZER0.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Pacman / AUR</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Comando equivalente</th></tr></thead>
+            <tbody>
+              <tr><td><code>ins &lt;pkg&gt;</code></td><td><code>sudo pacman -S &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>rem &lt;pkg&gt;</code></td><td><code>sudo pacman -Rns &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>upd</code></td><td><code>sudo pacman -Syu</code></td></tr>
+              <tr><td><code>srch &lt;query&gt;</code></td><td><code>pacman -Ss &lt;query&gt;</code></td></tr>
+              <tr><td><code>info &lt;pkg&gt;</code></td><td><code>pacman -Si &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>ls-pkg</code></td><td><code>pacman -Qe</code> — paquetes instalados explícitamente</td></tr>
+              <tr><td><code>clean</code></td><td><code>sudo pacman -Sc</code> — limpia caché de paquetes</td></tr>
+              <tr><td><code>orphans</code></td><td><code>pacman -Qdt</code> — lista paquetes huérfanos</td></tr>
+              <tr><td><code>yins &lt;pkg&gt;</code></td><td><code>yay -S &lt;pkg&gt;</code> (requiere yay)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Git</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Comando equivalente</th></tr></thead>
+            <tbody>
+              <tr><td><code>gs</code></td><td><code>git status</code></td></tr>
+              <tr><td><code>ga</code></td><td><code>git add .</code></td></tr>
+              <tr><td><code>gc &lt;msg&gt;</code></td><td><code>git commit -m "&lt;msg&gt;"</code></td></tr>
+              <tr><td><code>gp</code></td><td><code>git push</code></td></tr>
+              <tr><td><code>gpl</code></td><td><code>git pull</code></td></tr>
+              <tr><td><code>gl</code></td><td><code>git log --oneline --graph</code></td></tr>
+              <tr><td><code>gb</code></td><td><code>git branch</code></td></tr>
+              <tr><td><code>gco &lt;branch&gt;</code></td><td><code>git checkout &lt;branch&gt;</code></td></tr>
+              <tr><td><code>gnb &lt;branch&gt;</code></td><td><code>git checkout -b &lt;branch&gt;</code></td></tr>
+              <tr><td><code>gst</code></td><td><code>git stash</code></td></tr>
+              <tr><td><code>gstp</code></td><td><code>git stash pop</code></td></tr>
+              <tr><td><code>gclone &lt;url&gt;</code></td><td><code>git clone &lt;url&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Systemd / Servicios</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Comando equivalente</th></tr></thead>
+            <tbody>
+              <tr><td><code>sstart &lt;svc&gt;</code></td><td><code>sudo systemctl start &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sstop &lt;svc&gt;</code></td><td><code>sudo systemctl stop &lt;svc&gt;</code></td></tr>
+              <tr><td><code>srestart &lt;svc&gt;</code></td><td><code>sudo systemctl restart &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sstatus &lt;svc&gt;</code></td><td><code>systemctl status &lt;svc&gt;</code></td></tr>
+              <tr><td><code>senable &lt;svc&gt;</code></td><td><code>sudo systemctl enable &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sdisable &lt;svc&gt;</code></td><td><code>sudo systemctl disable &lt;svc&gt;</code></td></tr>
+              <tr><td><code>jlog &lt;svc&gt;</code></td><td><code>journalctl -u &lt;svc&gt; -f</code></td></tr>
+              <tr><td><code>jboot</code></td><td><code>journalctl -b</code> — logs del boot actual</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Python / Desarrollo</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Comando equivalente</th></tr></thead>
+            <tbody>
+              <tr><td><code>venv</code></td><td><code>python -m venv .venv</code></td></tr>
+              <tr><td><code>vact</code></td><td><code>source .venv/bin/activate</code></td></tr>
+              <tr><td><code>vdeact</code></td><td><code>deactivate</code></td></tr>
+              <tr><td><code>pipi &lt;pkg&gt;</code></td><td><code>pip install &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>pipreq</code></td><td><code>pip install -r requirements.txt</code></td></tr>
+              <tr><td><code>freeze</code></td><td><code>pip freeze &gt; requirements.txt</code></td></tr>
+              <tr><td><code>py &lt;file&gt;</code></td><td><code>python &lt;file&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Red / Redes</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Comando equivalente</th></tr></thead>
+            <tbody>
+              <tr><td><code>ip4</code></td><td><code>ip -4 addr show</code></td></tr>
+              <tr><td><code>ip6</code></td><td><code>ip -6 addr show</code></td></tr>
+              <tr><td><code>ports</code></td><td><code>ss -tulpn</code></td></tr>
+              <tr><td><code>ping4 &lt;host&gt;</code></td><td><code>ping -c 4 &lt;host&gt;</code></td></tr>
+              <tr><td><code>dns &lt;host&gt;</code></td><td><code>dig &lt;host&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EN -->
+      <div class="en-only">
+        <h1>Commands / Reference</h1>
+        <p class="page-desc">Full reference of all ZER0 REPL commands, organized by category. ZER0 includes 80+ default shortcuts.</p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Usage
+          </div>
+          All these commands are run <strong>inside the ZER0 REPL</strong>. Open the REPL with <code>zero</code>, <code>-Z</code>, or <code>$Z</code>, then type the alias.
+        </div>
+
+        <h2>ZER0 System Commands</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>help</code></td><td>Shows REPL help and lists all available commands.</td></tr>
+              <tr><td><code>version</code></td><td>Shows the current ZER0 version.</td></tr>
+              <tr><td><code>list</code></td><td>Lists all defined aliases (including custom ones).</td></tr>
+              <tr><td><code>add &lt;alias&gt; &lt;cmd&gt;</code></td><td>Adds a new custom alias.</td></tr>
+              <tr><td><code>remove &lt;alias&gt;</code></td><td>Removes a custom alias.</td></tr>
+              <tr><td><code>edit</code></td><td>Opens the config file in the default editor.</td></tr>
+              <tr><td><code>reload</code></td><td>Reloads the configuration without leaving the REPL.</td></tr>
+              <tr><td><code>lang &lt;es|en&gt;</code></td><td>Changes the REPL language in real time.</td></tr>
+              <tr><td><code>clear</code></td><td>Clears the REPL screen.</td></tr>
+              <tr><td><code>exit</code> / <code>q</code></td><td>Exits the ZER0 REPL.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Pacman / AUR</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Equivalent command</th></tr></thead>
+            <tbody>
+              <tr><td><code>ins &lt;pkg&gt;</code></td><td><code>sudo pacman -S &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>rem &lt;pkg&gt;</code></td><td><code>sudo pacman -Rns &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>upd</code></td><td><code>sudo pacman -Syu</code></td></tr>
+              <tr><td><code>srch &lt;query&gt;</code></td><td><code>pacman -Ss &lt;query&gt;</code></td></tr>
+              <tr><td><code>info &lt;pkg&gt;</code></td><td><code>pacman -Si &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>ls-pkg</code></td><td><code>pacman -Qe</code> — explicitly installed packages</td></tr>
+              <tr><td><code>clean</code></td><td><code>sudo pacman -Sc</code> — clean package cache</td></tr>
+              <tr><td><code>orphans</code></td><td><code>pacman -Qdt</code> — list orphaned packages</td></tr>
+              <tr><td><code>yins &lt;pkg&gt;</code></td><td><code>yay -S &lt;pkg&gt;</code> (requires yay)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Git</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Equivalent command</th></tr></thead>
+            <tbody>
+              <tr><td><code>gs</code></td><td><code>git status</code></td></tr>
+              <tr><td><code>ga</code></td><td><code>git add .</code></td></tr>
+              <tr><td><code>gc &lt;msg&gt;</code></td><td><code>git commit -m "&lt;msg&gt;"</code></td></tr>
+              <tr><td><code>gp</code></td><td><code>git push</code></td></tr>
+              <tr><td><code>gpl</code></td><td><code>git pull</code></td></tr>
+              <tr><td><code>gl</code></td><td><code>git log --oneline --graph</code></td></tr>
+              <tr><td><code>gb</code></td><td><code>git branch</code></td></tr>
+              <tr><td><code>gco &lt;branch&gt;</code></td><td><code>git checkout &lt;branch&gt;</code></td></tr>
+              <tr><td><code>gnb &lt;branch&gt;</code></td><td><code>git checkout -b &lt;branch&gt;</code></td></tr>
+              <tr><td><code>gst</code></td><td><code>git stash</code></td></tr>
+              <tr><td><code>gstp</code></td><td><code>git stash pop</code></td></tr>
+              <tr><td><code>gclone &lt;url&gt;</code></td><td><code>git clone &lt;url&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Systemd / Services</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Equivalent command</th></tr></thead>
+            <tbody>
+              <tr><td><code>sstart &lt;svc&gt;</code></td><td><code>sudo systemctl start &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sstop &lt;svc&gt;</code></td><td><code>sudo systemctl stop &lt;svc&gt;</code></td></tr>
+              <tr><td><code>srestart &lt;svc&gt;</code></td><td><code>sudo systemctl restart &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sstatus &lt;svc&gt;</code></td><td><code>systemctl status &lt;svc&gt;</code></td></tr>
+              <tr><td><code>senable &lt;svc&gt;</code></td><td><code>sudo systemctl enable &lt;svc&gt;</code></td></tr>
+              <tr><td><code>sdisable &lt;svc&gt;</code></td><td><code>sudo systemctl disable &lt;svc&gt;</code></td></tr>
+              <tr><td><code>jlog &lt;svc&gt;</code></td><td><code>journalctl -u &lt;svc&gt; -f</code></td></tr>
+              <tr><td><code>jboot</code></td><td><code>journalctl -b</code> — current boot logs</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Python / Development</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Equivalent command</th></tr></thead>
+            <tbody>
+              <tr><td><code>venv</code></td><td><code>python -m venv .venv</code></td></tr>
+              <tr><td><code>vact</code></td><td><code>source .venv/bin/activate</code></td></tr>
+              <tr><td><code>vdeact</code></td><td><code>deactivate</code></td></tr>
+              <tr><td><code>pipi &lt;pkg&gt;</code></td><td><code>pip install &lt;pkg&gt;</code></td></tr>
+              <tr><td><code>pipreq</code></td><td><code>pip install -r requirements.txt</code></td></tr>
+              <tr><td><code>freeze</code></td><td><code>pip freeze &gt; requirements.txt</code></td></tr>
+              <tr><td><code>py &lt;file&gt;</code></td><td><code>python &lt;file&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Network</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Alias</th><th>Equivalent command</th></tr></thead>
+            <tbody>
+              <tr><td><code>ip4</code></td><td><code>ip -4 addr show</code></td></tr>
+              <tr><td><code>ip6</code></td><td><code>ip -6 addr show</code></td></tr>
+              <tr><td><code>ports</code></td><td><code>ss -tulpn</code></td></tr>
+              <tr><td><code>ping4 &lt;host&gt;</code></td><td><code>ping -c 4 &lt;host&gt;</code></td></tr>
+              <tr><td><code>dns &lt;host&gt;</code></td><td><code>dig &lt;host&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="page-nav">
+        <a class="page-nav-btn" href="install.html">
+          <span class="page-nav-label es-only">← Anterior</span>
+          <span class="page-nav-label en-only">← Previous</span>
+          <span class="page-nav-title es-only">Instalación</span>
+          <span class="page-nav-title en-only">Installation</span>
+        </a>
+        <a class="page-nav-btn next" href="config.html">
+          <span class="page-nav-label es-only">Siguiente →</span>
+          <span class="page-nav-label en-only">Next →</span>
+          <span class="page-nav-title es-only">Configuración</span>
+          <span class="page-nav-title en-only">Configuration</span>
+        </a>
+      </div>
+
+      <div class="doc-footer">
+        <span class="doc-footer-text">LogLabs · MIT License · <a href="https://github.com/LogLabsHQ" target="_blank">@LogLabsHQ</a></span>
+        <span class="doc-footer-text" style="color:var(--text-subtle)">ZER0 v1.0.3</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

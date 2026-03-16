@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalación · ZER0 · LogLabs Docs</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⚡</text></svg>" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="navbar-brand" href="../index.html">
+    <span class="brand-prefix">log</span><span class="brand-sep">/</span><span class="brand-name">labs</span>
+    <span style="color:var(--border-hover);margin:0 6px">·</span>
+    <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">docs</span>
+  </a>
+  <div class="navbar-sep"></div>
+  <div class="search-wrapper">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input id="search-input" class="search-input" type="text" placeholder="Buscar / Search..." autocomplete="off" />
+    <div id="search-results" class="search-results"></div>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="hamburger" id="hamburger">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="nav-home" href="../index.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="es-only">Inicio</span><span class="en-only">Home</span>
+    </a>
+    <div class="nav-divider"></div>
+    <div class="nav-project-label">LogLabs</div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">General</span>
+        <span class="nav-section-label en-only">General</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="../index.html"><span class="es-only">Bienvenida</span><span class="en-only">Welcome</span></a>
+      </div>
+    </div>
+    <div class="nav-project-label" style="margin-top:8px">ZER0</div>
+    <div class="nav-section open">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Empezar</span>
+        <span class="nav-section-label en-only">Getting Started</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="index.html"><span class="es-only">Introducción</span><span class="en-only">Overview</span></a>
+        <a class="nav-link active" href="install.html"><span class="es-only">Instalación</span><span class="en-only">Installation</span></a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label es-only">Referencia</span>
+        <span class="nav-section-label en-only">Reference</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="commands.html"><span class="es-only">Comandos</span><span class="en-only">Commands</span></a>
+        <a class="nav-link" href="config.html"><span class="es-only">Configuración</span><span class="en-only">Configuration</span></a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-section-label">FAQ</span>
+        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="nav-items">
+        <a class="nav-link" href="faq.html"><span class="es-only">FAQ / Troubleshooting</span><span class="en-only">FAQ / Troubleshooting</span></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="content">
+
+      <!-- ES -->
+      <div class="es-only">
+        <h1>Instalación</h1>
+        <p class="page-desc">ZER0 se instala con un solo comando. El instalador descarga y configura todo automáticamente, incluyendo Python embebido si es necesario.</p>
+
+        <h2>Requisitos</h2>
+        <ul>
+          <li>Arch Linux (o derivadas: Manjaro, EndeavourOS, etc.)</li>
+          <li><code>bash</code> — viene por defecto en Arch</li>
+          <li><code>curl</code> — para descargar el instalador</li>
+          <li>Conexión a Internet</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Nota
+          </div>
+          ZER0 está diseñado específicamente para Arch Linux. No se garantiza soporte oficial en otras distribuciones.
+        </div>
+
+        <h2>Instalación recomendada</h2>
+        <p>Ejecuta este comando en tu terminal para instalar ZER0 automáticamente:</p>
+        <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/LogLabsHQ/ZER0/main/install.sh)</code></pre>
+
+        <p>El script hará lo siguiente:</p>
+        <ol>
+          <li>Verificar los requisitos del sistema</li>
+          <li>Descargar ZER0 y sus dependencias</li>
+          <li>Configurar los alias de terminal (<code>zero</code>, <code>-Z</code>, <code>$Z</code>)</li>
+          <li>Crear el archivo de configuración en <code>~/.config/zer0/</code></li>
+        </ol>
+
+        <h2>Instalación manual</h2>
+        <p>Si prefieres instalar manualmente, clona el repositorio y ejecuta el instalador localmente:</p>
+        <pre><code># 1. Clonar el repositorio
+git clone https://github.com/LogLabsHQ/ZER0.git
+cd ZER0
+
+# 2. Ejecutar el instalador
+bash install.sh</code></pre>
+
+        <h2>Verificar la instalación</h2>
+        <p>Una vez instalado, verifica que ZER0 funciona correctamente:</p>
+        <pre><code>zero --version</code></pre>
+        <p>Deberías ver la salida:</p>
+        <pre><code>ZER0 v1.0.3 — LogLabs</code></pre>
+
+        <h2>Primer lanzamiento</h2>
+        <p>Inicia el REPL interactivo con cualquiera de estos comandos:</p>
+        <pre><code>zero    # Nombre completo
+-Z      # Atajo corto
+$Z      # Variante con prefijo $</code></pre>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Tip
+          </div>
+          Agrega <code>alias zero='zero'</code> a tu <code>~/.bashrc</code> o <code>~/.zshrc</code> si el comando no se reconoce tras la instalación. El instalador lo hace automáticamente, pero puede requerir reiniciar la sesión de terminal.
+        </div>
+
+        <h2>Desinstalación</h2>
+        <p>Para desinstalar ZER0 completamente:</p>
+        <pre><code>zero --uninstall</code></pre>
+        <p>O manualmente eliminando los archivos:</p>
+        <pre><code>rm -rf ~/.config/zer0
+rm -rf ~/.local/share/zer0
+# Elimina también las líneas de alias en ~/.bashrc o ~/.zshrc</code></pre>
+      </div>
+
+      <!-- EN -->
+      <div class="en-only">
+        <h1>Installation</h1>
+        <p class="page-desc">ZER0 installs with a single command. The installer downloads and configures everything automatically, including embedded Python if needed.</p>
+
+        <h2>Requirements</h2>
+        <ul>
+          <li>Arch Linux (or derivatives: Manjaro, EndeavourOS, etc.)</li>
+          <li><code>bash</code> — comes by default on Arch</li>
+          <li><code>curl</code> — to download the installer</li>
+          <li>Internet connection</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Note
+          </div>
+          ZER0 is designed specifically for Arch Linux. Official support on other distributions is not guaranteed.
+        </div>
+
+        <h2>Recommended Installation</h2>
+        <p>Run this command in your terminal to install ZER0 automatically:</p>
+        <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/LogLabsHQ/ZER0/main/install.sh)</code></pre>
+
+        <p>The script will:</p>
+        <ol>
+          <li>Verify system requirements</li>
+          <li>Download ZER0 and its dependencies</li>
+          <li>Configure terminal aliases (<code>zero</code>, <code>-Z</code>, <code>$Z</code>)</li>
+          <li>Create the config file at <code>~/.config/zer0/</code></li>
+        </ol>
+
+        <h2>Manual Installation</h2>
+        <p>If you prefer to install manually, clone the repository and run the installer locally:</p>
+        <pre><code># 1. Clone the repository
+git clone https://github.com/LogLabsHQ/ZER0.git
+cd ZER0
+
+# 2. Run the installer
+bash install.sh</code></pre>
+
+        <h2>Verify Installation</h2>
+        <p>Once installed, verify ZER0 works correctly:</p>
+        <pre><code>zero --version</code></pre>
+        <p>You should see:</p>
+        <pre><code>ZER0 v1.0.3 — LogLabs</code></pre>
+
+        <h2>First Launch</h2>
+        <p>Start the interactive REPL with any of these commands:</p>
+        <pre><code>zero    # Full name
+-Z      # Short shortcut
+$Z      # Variant with $ prefix</code></pre>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Tip
+          </div>
+          Add <code>alias zero='zero'</code> to your <code>~/.bashrc</code> or <code>~/.zshrc</code> if the command isn't recognized after installation. The installer does this automatically, but it may require restarting your terminal session.
+        </div>
+
+        <h2>Uninstallation</h2>
+        <p>To completely uninstall ZER0:</p>
+        <pre><code>zero --uninstall</code></pre>
+        <p>Or manually by removing the files:</p>
+        <pre><code>rm -rf ~/.config/zer0
+rm -rf ~/.local/share/zer0
+# Also remove alias lines from ~/.bashrc or ~/.zshrc</code></pre>
+      </div>
+
+      <div class="page-nav">
+        <a class="page-nav-btn" href="index.html">
+          <span class="page-nav-label es-only">← Anterior</span>
+          <span class="page-nav-label en-only">← Previous</span>
+          <span class="page-nav-title es-only">Introducción</span>
+          <span class="page-nav-title en-only">Overview</span>
+        </a>
+        <a class="page-nav-btn next" href="commands.html">
+          <span class="page-nav-label es-only">Siguiente →</span>
+          <span class="page-nav-label en-only">Next →</span>
+          <span class="page-nav-title es-only">Comandos</span>
+          <span class="page-nav-title en-only">Commands</span>
+        </a>
+      </div>
+
+      <div class="doc-footer">
+        <span class="doc-footer-text">LogLabs · MIT License · <a href="https://github.com/LogLabsHQ" target="_blank">@LogLabsHQ</a></span>
+        <span class="doc-footer-text" style="color:var(--text-subtle)">ZER0 v1.0.3</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
